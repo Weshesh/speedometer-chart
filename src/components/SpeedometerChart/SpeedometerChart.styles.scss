@@ -1,0 +1,203 @@
+@import "../../variables";
+
+
+.dgc-speedometer-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  &.small {
+    justify-content: flex-end;
+    height: 48px;
+    .dgc-speedometer-chart-container {
+      //width: 48px;
+      width: unset;
+      height: 48px;
+    }
+    .dgc-speedometer-chart {
+      height: 48px;
+      //width: 48px;
+    }
+    .dgc-number-bubble-value {
+      font-weight: 700;
+      font-size: 12px;
+      background-color: transparent !important;
+      color: $blue-primary;
+      &.error {
+        color: $theme-color-danger;
+      }
+    }
+    .dgc-number-bubble-loader {
+      .spinner {
+        width: 24px;
+      }
+    }
+  }
+}
+
+.dgc-speedometer-chart-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dgc-speedometer-chart--small-value-label {
+  font-family: 'bellslim', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  margin-left: 16px;
+  font-size: 14px;
+  color: $blue-primary;
+  .unit {
+    margin-left: 8px;
+  }
+}
+
+.dgc-speedometer-chart {
+  height: 100%;
+  //width: 100%;
+  //max-width: 100%;
+  //max-height: 100%;
+}
+
+.dgc-speedometer-chart--threshold-label {
+  font-family: bellslim, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: $gray-2;
+  margin: 0 8px 0 8px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 55px;
+  flex: 0 0 auto;
+  &.left {
+    justify-content: flex-end;
+  }
+  .dgc-speedometer-chart--threshold-label--tick {
+    margin: 0 8px;
+    height: 1px;
+    width: 8px;
+    border-bottom: 1px solid $gray-3;
+    box-sizing: border-box;
+  }
+}
+
+.dgc-speedometer-loading-state-arc {
+  color: $gray-2;
+  transition: opacity $medium $brand-curve;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+}
+
+.dgc-speedometer-value-arc {
+  transition: opacity $fast $brand-curve, stroke $fast $brand-curve;
+  color: $blue-primary;
+  &.loading {
+    stroke: $gray-2;
+    opacity: 0;
+  }
+}
+
+.dgc-speedometer-value-arc-border {
+  transition: opacity $very-fast $brand-curve;
+  color: white;
+  &.loading{
+    opacity: 0;
+  }
+}
+
+.dgc-speedometer-backdrop-arc {
+  color: $gray-3;
+}
+
+.dgc-speedometer-backdrop-border {
+  opacity: 1;
+  transition: opacity $medium $brand-curve;
+  color: $gray-5;
+}
+
+
+.dgc-speedometer-children-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity $slow $brand-curve;
+  &.loading {
+    .dgc-speedometer-children-content--error-label,
+    .dgc-speedometer-children-content--universe-label,
+    .dgc-speedometer-children-content--universe-estimate-value,
+    .dgc-speedometer-children-content--unit-label {
+      color: $gray-3;
+    }
+  }
+}
+
+.dgc-speedometer-children-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .dgc-number-bubble-value {
+    font-weight: 500;
+    font-size: 28px;
+  }
+
+  .dgc-speedometer-children-content--placeholder-label {
+    width: calc(100% - 220px);
+    position: absolute;
+    text-align: center;
+
+    color: $utility-black;
+    font-family: 'bellslim', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+
+.dgc-speedometer-children-content--error-label,
+.dgc-speedometer-children-content--universe-label,
+.dgc-speedometer-children-content--universe-estimate-value,
+.dgc-speedometer-children-content--unit-label {
+  transition: color $slow $brand-curve;
+  color: $utility-black;
+  font-family: 'bellslim', sans-serif;
+  font-style: normal;
+  margin-top: 8px;
+}
+
+.dgc-speedometer-children-content--universe-label {
+  font-weight: 500;
+  font-size: 16px;
+  height: 20px;
+}
+
+.dgc-speedometer-children-content--universe-estimate-value {
+  font-weight: 400;
+  font-size: 36px;
+  height: 42px;
+  margin-top: 16px;
+}
+
+.dgc-speedometer-children-content--unit-label {
+  font-weight: 500;
+  font-size: 16px;
+  height: 20px;
+}
