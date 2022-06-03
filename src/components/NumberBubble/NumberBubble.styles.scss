@@ -1,0 +1,69 @@
+@import "../../variables";
+
+.dgc-number-bubble-container {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity $slow $brand-curve;
+  &.show {
+    opacity: 1;
+  }
+}
+
+.dgc-number-bubble-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity $slow $brand-curve;
+  &.show {
+    opacity: 1;
+    &.error {
+      .spinner {
+        .path {
+          stroke: $gray-5;
+        }
+      }
+    }
+  }
+}
+
+.dgc-number-bubble-value {
+  font-family: 'bellslim', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: $utility-white;
+  transition: color $slow $brand-curve, background-color $slow $brand-curve;
+
+  &.withValue {
+    background-color: $blue-primary;
+    &.loading {
+      color: $gray-2;
+      background-color: $gray-4;
+    }
+  }
+  &.error {
+    color: $utility-white;
+    background-color: $theme-color-danger;
+  }
+  &.error.loading {
+    background: $theme-color-danger-50;
+    color: $gray-5;
+  }
+
+}
