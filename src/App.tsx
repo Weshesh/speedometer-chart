@@ -5,7 +5,7 @@ import SpeedometerChart from './components/SpeedometerChart';
 function App() {
   return (
     <div className="App">
-      <SpeedometerChart />
+      <SpeedometerChart percentValue={40}/>
     </div>
   );
 }
