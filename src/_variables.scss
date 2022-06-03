@@ -1,0 +1,130 @@
+// Colors
+$overlay-background: rgba(0,84,154,.39); //rgba(0, 0, 0, 0.3);
+
+$blue-primary: #00549A;
+$blue-light: #C9DDEF;
+$blue-dark: #004A88;
+$blue-background: #FAFCFF;
+$blue-primary-15: #D9E5F0;
+$blue-primary-light: #C2CEDF;
+$blue-primary-extra-light: #F4FAFF;
+
+$select-list-hover-background: #EBEBEE;
+
+$utility-white: #FFFFFF;
+$utility-black: #032539;
+$utility-background: #FCFCFC;
+
+$theme-color-danger: #CB085A;
+$theme-color-danger-light: #FFEFF6;
+$theme-color-danger-dark: #87083c;
+$theme-color-danger-15: #f9e9ea;
+$theme-color-danger-50: #de7ca5;
+$theme-color-signal-danger: #BD2025;
+
+$theme-color-success: #1DB259;
+$theme-color-success-dark: #1e8741;
+$theme-color-signal-success: #009A63;
+$theme-color-signal-success-15: #D9F0E8;
+
+$theme-color-signal-15: #FEF6EC;
+
+$signal-warning: #EDA538;
+$signal-warning-dark: #E49114;
+$signal-warning-15: #FDF2E1;
+
+$gray-1: #555555;
+$gray-2: #A7A7A7;
+$gray-3: #D0D0D0;
+$gray-4: #E3E3E3;
+$gray-5: #F1F1F1;
+$gray-6: #F8F8F8;
+
+$gray-2-30: #E4E4E4;
+
+//$box-shadow: 0 0 32px rgba(3, 37, 57, 0.08), 0 0 8px rgba(3, 37, 57, 0.08);
+$box-shadow: 0 0 32px rgba(3, 37, 57, 0.08), 0 0 8px rgba(3, 37, 57, 0.2);
+$drop-shadow: drop-shadow(0 0 32px rgba(3, 37, 57, 0.08)) drop-shadow(0 0 8px rgba(3, 37, 57, 0.08));
+
+@mixin dm-depth {
+  background: #C4C4C4;
+  box-shadow: $box-shadow;
+}
+
+$very-fast: .15s;
+$fast: .3s;
+$medium: .6s;
+$slow: 1s;
+$brand-curve: cubic-bezier(.2,.9,.2,1);
+
+// Fonts
+@mixin small-font {
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: -0.03em;
+  font-style: normal;
+  font-weight: normal;
+}
+
+$default-font: Arial, sans-serif;
+$title-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Others
+$default-border: 1px solid rgba(0,0,0,0.2);
+$separator-border: 1px solid $gray-4;
+$default-shaddow: 0 6px 12px rgba(0, 0, 0, 0.175);
+
+// Dashboard
+$overlay-margin-y: 10px;
+$overlay-margin-x: 6px;
+
+// Frequency picker
+$frequency-button-width: 12px;
+
+// Header
+$header-z-index: 3;
+
+//logic blocks
+$logic-primary-background: #E3EEF6;
+$logic-success-background: #E2F6EE;
+$logic-warning-background: #FEF6EA;
+
+//buttons
+$button-primary: #CADFED;
+$button-primary-hover: #B4D1E6;
+$button-primary-active: #A7C7E0;
+$button-primary-active-hover: #94BBD9;
+
+$button-success: #C7EEE0;
+$button-success-hover: #A4E4CD;
+$button-success-active: #A0E2CB;
+$button-success-active-hover: #8CDBC0;
+
+$button-warning: #FEEACD;
+$button-warning-hover: #FDE0B4;
+$button-warning-active: #FDE2BA;
+$button-warning-active-hover: #FCD9A4;
+
+@mixin pulse-dg-btn-base {
+  box-shadow: 0 0 0 8px rgba(128,128,128, 0);
+  transition: .3s box-shadow, color $fast $brand-curve, background $fast $brand-curve;
+}
+
+@mixin pulse-dg-btn-active {
+  box-shadow: 0 0 0 0 rgba(128,128,128, .4);
+  transition: 0s box-shadow, color $fast $brand-curve, background $fast $brand-curve;
+}
+
+// Location picker
+$location-picker-header-height:  190px;
+
+// Sliding panels
+$location-control-width: 320px;
+$run-button-container-height: 80px;
+$location-panel-navbar-height: 40px;
+
+$css--reset: false;
+
+$modal-width-small: 720px;
+$modal-height-small: 216px;
+$modal-width-big: 1112px;
+$modal-height-big: 438px;
